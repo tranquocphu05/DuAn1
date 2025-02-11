@@ -1,0 +1,112 @@
+.order_boxLeft{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box_row1 {
+
+}
+
+.box_row1 h3 {
+    margin: 30px 0;
+    font-size: 26px;
+}
+
+.row1_content {
+    margin-left: 24px;
+}
+
+.proInOrder {
+    display: flex;
+    height: 100px;
+}
+
+.row1_content_img {
+height: 90%;
+width: 90px;
+}
+
+.row1_content_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.row1_content_inf {
+    margin-left: 25px;
+}
+.row1_content_inf h5 {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.row1_content_inf h5:first-child {
+    font-size: 18px;
+    font-weight: 600;
+}
+/**/
+.box_row2 {
+width: 500px;
+margin-left: 5%;
+}
+
+.box_row2 h3 {
+    margin: 30px 0;
+    font-size: 26px;
+}
+
+.box_row2 input {
+width: 90%;
+margin: 10px auto;
+height: 50px;
+padding-left: 10px;
+}
+
+#btn {
+    width: 200px;
+    height: 50px;
+    border-radius: 14px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #141F46;
+    cursor: pointer;
+    margin-left: 94px;
+    margin-top: 34px;
+}
+
+#btn:hover {
+    background-color: #fff;
+    color: #141F46;
+    font-weight: 600;
+}
+
+/**/
+
+.voucher{
+    width: 400px;
+    height: 120px;
+    background: aliceblue;
+    padding-left: 20px;
+    margin-bottom: 24px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: #ccc 8px 8px;
+}
+
+.voucher h5 {
+    margin: 10px 0;
+    padding-top: 10px;
+    color: red;
+    font-size: 16px;
+}
+
+.voucher input {
+ margin-top: 10px;
+ width: 18px;
+    height: 16px;
+}
+
+.voucher label {
+    font-size: 18px;
+}

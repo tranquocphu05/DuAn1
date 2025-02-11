@@ -1,20 +1,76 @@
 <?php
 session_start();
-// Đây là file chạy chính (Là nơi chúng require các file)
-require_once "./env.php";    // Chứa các biến môi trường
-require_once "./common/connect.php";   // Chứa các hàm dùng chung
 
-// require các controller mà route trỏ tới
-require_once './app/Controllers/HomeController.php';
+// Nhúng các file cần dùng vào
 
-// require Các model mà controller muốn sử dụng
+//Common
 
-// Route (Điều hướng)
-$act = $_GET['act'] ?? '/';
+include "common/env.php";
+include "common/function.php";
+
+// Nhứng troàn bộ các file controller
+include "controller/HomeController.php";
+include "controller/LoginController.php";
+include "admin/controller/categoryController.php";
+
+// Nhứng troàn bộ các file model
+
+
+include 'admin/model/product.php';
+include "model/productQuery.php";
+include "model/loginQuery.php";
+include "model/billQuery.php";
+include "model/order.php";
+// include "model/account.php";
+
+
+include "admin/model/category.php"; 
+include "admin/model/categoryQuery.php"; 
+include "admin/model/account.php"; 
+include "admin/model/accountQuery.php"; 
+include "admin/model/bill.php"; 
+include "admin/model/comment.php";
+include "admin/model/commentQuery.php";
+include "admin/model/news.php";
+include "admin/model/newsQuery.php";
+include "admin/model/voucher.php";
+include "admin/model/voucherQuery.php";
+
+
+// Thông tin act
+$act = $_GET['act'] ?? '' ;
+$id = $_GET['id']  ?? '';
+date_default_timezone_set('Asia/Jakarta');
+
+if(!isset($_SESSION["myCart"])) {
+  $_SESSION["myCart"] = [];
+}
 
 match ($act) {
-    // Nơi khai báo các đường dẫn
-    '/' => (new HomeController())->index(),
+    '' => (new HomeController())->home(),
+    'login' => (new LoginController) ->login(),
+    'logout' => (new LoginController()) ->logout(),
+    'signup' => (new LoginController()) ->signup(),
+    // 'dangky' => (new LoginController()) ->dangky(),
+    'cart' =>  (new HomeController())->cart(),
+    'ctsp'=> (new HomeController()) -> ctsp(),
+    'order' => (new HomeController()) -> order(),
+    'end_order' => (new HomeController()) -> end_order(),
+    // 'ctsp_dt' => (new HomeController()) -> ctsp_dt(),
 
-    // Khai báo route
-};
+    'deleteProInCart' => (new HomeController()) -> deleteOneProInCart(),
+
+    'deleteAllCart' => (new HomeController()) -> deleteAllCart(),
+
+    'view_profile' => (new HomeController()) -> viewProfile(),
+
+    'update_profile' => (new HomeController()) -> updateProfile(),
+    
+    'searchPro' => (new HomeController()) -> searchPro(),
+
+    'showAllProOfCate'=> (new HomeController()) -> showAllProOfCate(),
+    
+}
+
+
+?>

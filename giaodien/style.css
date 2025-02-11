@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: Roboto;
+}
+@font-face{
+  font-family: Roboto;
+  src: url(font/Roboto/Roboto-Regular.ttf);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
